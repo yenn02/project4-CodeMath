@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.meterConvert.setOnClickListener{convertToCM()}
+        binding.degreeConvert.setOnClickListener{convertToF()}
+
 
 
     }
@@ -24,6 +26,15 @@ class MainActivity : AppCompatActivity() {
         val finalResult = mnumber/mTocm
         val formatResult = NumberFormat.getNumberInstance().format(finalResult)
         binding.finalResult.text =getString(R.string.unit_result, formatResult)
+    }
+    private fun convertToF(){
+        val textInput = binding.cDegree.text.toString()
+        val cnumber = textInput.toDouble()
+        val x = 9/5
+        val y = 32
+        val finaldegree = (cnumber*x)+y
+        val formatdegree = NumberFormat.getNumberInstance().format(finaldegree)
+        binding.finalDegree.text =getString(R.string.degree_result, formatdegree)
     }
 
 }

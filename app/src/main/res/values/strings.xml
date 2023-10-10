@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">project4</string>
     <string name="unit_result">%s</string>
+    <string name="degree_result">%s</string>
 </resources>
